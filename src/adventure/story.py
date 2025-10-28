@@ -4,6 +4,8 @@ from rich import print
 from rich.style import Style
 from rich.console import Console
 
+default_message = "You stand still, unsure what to do. The forest swallows you."
+
 def step(choice: str, events):
     random_event = random.choice(events)
 
@@ -12,7 +14,7 @@ def step(choice: str, events):
     elif choice == "right":
         return right_path(random_event)
     else:
-        return "You stand still, unsure what to do. The forest swallows you."
+        return default_message
 
 def left_path(event):
     return "You walk left. " + "[red]" + event
