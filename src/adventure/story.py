@@ -18,7 +18,7 @@ def left_path(event):
     return "You walk left. " + "[red]" + event
 
 def right_path(event):
-    return "You walk right. " + "[purple]" + event
+    return "You walk right. " + "[green]" + event
 
 if __name__ == "__main__":
     events = read_events_from_file('events.txt')
@@ -26,9 +26,10 @@ if __name__ == "__main__":
     print("You wake up in a dark forest. You can go left or right.")
     while True:
         console = Console()
-        choice = console.input("Which direction do you choose?[italic bold blue][warning](left/right/exit): [/ italic bold blue]")
+        choice = console.input("[italic bold blue]Which direction do you choose? (left/right/exit): [/italic bold blue]")
         choice = choice.strip().lower()
         if choice == 'exit':
+            print("goodbye")
             break
         
         print(step(choice, events))
